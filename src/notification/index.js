@@ -48,6 +48,8 @@ export const sendSilentNotification = async (title, body) => {
  * @param {object} Payload to send 
  */
 const sendNotification = async (payload) => {
+  // The server key authorization must be store in a separate file (.env) to security reason
+  // For the purpose of this app it's good enough :) 
   return await fetch("https://fcm.googleapis.com/fcm/send", {
     method: "POST",
     headers: {
