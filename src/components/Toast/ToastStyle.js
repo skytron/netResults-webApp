@@ -7,7 +7,12 @@ export const Container = styled.div`
   padding: 1rem 2.5rem;
   border-radius: 10px;
   bottom: 40px;
-  left: 50%
+  left: 48%;
+  z-index: 1000;
+
+  @media (max-width: 480px) {
+    left: 20%;
+  }
 `
 
 Container.Message = styled.span`
