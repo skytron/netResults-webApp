@@ -7,6 +7,10 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 8rem;
+
+  @media (max-width: 480px) {
+    padding: 0 1.5rem;
+  }
 `;
 
 
@@ -14,6 +18,10 @@ Container.Title = styled.span`
   display: inline-block;
   color: white;
   font-size: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 
@@ -23,6 +31,10 @@ Container.Menu = styled.div`
     display: flex;
     justify-content: space-between;
     width: 150px;
+
+    @media (max-width: 480px) {
+      width: 120px;
+    }
 
     a {
       text-decoration: none;

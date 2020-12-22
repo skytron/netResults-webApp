@@ -13,7 +13,7 @@ export default function DownloadPage() {
   return (
     <Container>
       <Container.Label>Clicca sull'icona per scaricare l'app android</Container.Label>
-      <Container.DownloadLink href="https://firebasestorage.googleapis.com/v0/b/netresultspushnotification.appspot.com/o/app-release.apk?alt=media&token=3abaaa9d-9174-4798-bbb7-0ff81a06ba26">
+      <Container.DownloadLink href="https://firebasestorage.googleapis.com/v0/b/netresultspushnotification.appspot.com/o/app-release.apk?alt=media&token=65a44271-fca1-4c80-a930-e0bc55330373   ">
         <FontAwesomeIcon icon={faDownload} />
       </Container.DownloadLink>
     </Container>
