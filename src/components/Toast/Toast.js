@@ -6,6 +6,13 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 import { Container } from './ToastStyle';
 
+/**
+ * Toast to simple message notification with close button
+ * 
+ * @param {String}    message   - Message of notification 
+ * @param {Boolean}   show      - If true show the message notificaiton toast 
+ * @param {Boolean}   error     - If true show error variation of the toast notification 
+ */
 export default function Toast({ message, show, error }) {
   const [isShow, setShow] = useState(false);
 

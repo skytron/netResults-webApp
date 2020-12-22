@@ -9,11 +9,13 @@ export const Container = styled.header`
   padding: 0 8rem;
 `;
 
+
 Container.Title = styled.span`
   display: inline-block;
   color: white;
   font-size: 20px;
 `;
+
 
 Container.Menu = styled.div`
   ul {

@@ -1,3 +1,10 @@
+
+/**
+ * Send a "standard" notification
+ * 
+ * @param {String} title  - Notification title
+ * @param {String} body   - Notification body message 
+ */
 export const sendStandardNotification = async (title, body) => {
   const payload = {
     notification: { title, body },
@@ -14,6 +21,12 @@ export const sendStandardNotification = async (title, body) => {
   return await sendNotification(payload)
 }
 
+/**
+ * Send a silent notification (data only)
+ * 
+ * @param {String} title  - Notification title
+ * @param {String} body   - Notification body message 
+ */
 export const sendSilentNotification = async (title, body) => {
   const payload = {
     data: { title, body },
@@ -29,6 +42,11 @@ export const sendSilentNotification = async (title, body) => {
   return await sendNotification(payload)
 }
 
+/**
+ * Helper function to send notification message to FCM
+ * 
+ * @param {object} Payload to send 
+ */
 const sendNotification = async (payload) => {
   return await fetch("https://fcm.googleapis.com/fcm/send", {
     method: "POST",

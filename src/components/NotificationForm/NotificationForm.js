@@ -4,6 +4,14 @@ import { useForm } from 'react-hook-form';
 
 import { Container, Loader } from './NotificationFormStyle';
 
+/**
+ * Form to notification
+ * 
+ * @param {Func}    onSubmit    - Callback function on form submit
+ * @param {Boolean} isBusy      - IsBusy flag 
+ * @param {String}  title       - Notification Title 
+ *  
+ */
 export default function NotificationForm({ onSubmit, isBusy, title }) {
   const { register, handleSubmit, setValue, errors } = useForm();
 
@@ -17,7 +25,7 @@ export default function NotificationForm({ onSubmit, isBusy, title }) {
       });
     }
 
-    // clear message
+    // clear message text area
     setValue("notificationBody", "");
   }
 
@@ -58,6 +66,10 @@ export default function NotificationForm({ onSubmit, isBusy, title }) {
     </Container>
   )
 }
+
+/**
+ * PROP TYPES
+ */
 
 NotificationForm.propTypes = {
   onSubmit: propTypes.func,

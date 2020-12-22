@@ -8,6 +8,10 @@ import Toast from '../../components/Toast/Toast';
 
 import { Container } from './HomeStyles';
 
+/**
+ * Home page component to send push notification.
+ * In this page you can send both push notification "standand" and push silent notification (data only)
+ */
 export default function Home() {
   const [isBusyStandard, setBusyStandard] = useState(false);
   const [isBusySilent, setBusySilent] = useState(false);
@@ -15,6 +19,14 @@ export default function Home() {
   const [showMessage, setShowMessage] = useState(false);
   const [isErrorMessage, setIsErrorMessage] = useState(false);
 
+  /**
+   * Callback of the form notification component.
+   * It call when push "send notification" button
+   * 
+   * This handle "standard" notification
+   * 
+   * @param {object} data - data of the form  
+   */
   const onSubmitStandardNotification = async data => {
     try {
       setBusyStandard(true);
@@ -29,6 +41,14 @@ export default function Home() {
     }
   }
 
+  /**
+   * Callback of the form notification component.
+   * It call when push "send notification" button
+   * 
+   * This handle "silent" notification
+   * 
+   * @param {object} data - data of the form  
+   */
   const onSubmitSilentNotification = async data => {
     try {
       setBusySilent(true);
@@ -43,6 +63,12 @@ export default function Home() {
     }
   }
 
+  /**
+   * Helper function to prepare toast message to show to the user
+   * 
+   * @param {String}  message - Toast notification message 
+   * @param {Boolean} isError - If true choose error variant of the toast message 
+   */
   const makeMessage = (message, isError) => {
     setShowMessage(false);
     setMessage(message);
