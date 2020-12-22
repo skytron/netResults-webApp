@@ -5,12 +5,20 @@ import { useForm } from 'react-hook-form';
 import { Container, Loader } from './NotificationFormStyle';
 
 export default function NotificationForm({ onSubmit, isBusy, title }) {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, setValue, errors } = useForm();
 
   const onSubmitForm = data => {
+    const { notificationTitle, notificationBody } = data;
+
     if (onSubmit) {
-      onSubmit(data);
+      onSubmit({
+        title: notificationTitle,
+        body: notificationBody
+      });
     }
+
+    // clear message
+    setValue("notificationBody", "");
   }
 
   return (
@@ -25,23 +33,25 @@ export default function NotificationForm({ onSubmit, isBusy, title }) {
         <Container.Label>Titolo</Container.Label>
         <Container.Input
           error={!!errors.standardNotificationTitle}
-          name="standardNotificationTitle"
+          name="notificationTitle"
           type="text"
           placeholder="Messaggio"
           defaultValue={title}
           ref={register({ required: true })} />
-        {errors.standardNotificationTitle && <Container.Error>Devi inserire un titolo</Container.Error>}
+        {errors.notificationTitle && <Container.Error>Devi inserire un titolo</Container.Error>}
 
         {/* Body  */}
         <Container.Label style={{ marginTop: '48px' }}>Messaggio (Massimo 1000 caratteri)</Container.Label>
         <Container.TextArea
-          error={!!errors.standardNotificationBody}
-          name="standardNotificationBody"
+          error={!!errors.notificationBody}
+          name="notificationBody"
           type="text"
           placeholder="Messaggio"
           maxlength="1000"
-          ref={register({ required: true })} />
-        {errors.standardNotificationBody && <Container.Error>Devi inserire una messaggio</Container.Error>}
+          ref={register({ required: true, maxLength: 1000 })} />
+        {errors.notificationBody && errors.notificationBody.type === "required" && <Container.Error>Devi inserire una messaggio</Container.Error>}
+        {errors.notificationBody && errors.notificationBody.type === "maxLength" && <Container.Error>Massimo numero di caraterri è 1000</Container.Error>}
+
         <Container.Form.SubmitButton disabled={isBusy} value="INVIA NOTIFICA" />
 
       </Container.Form>
