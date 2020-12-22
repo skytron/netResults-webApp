@@ -22,11 +22,10 @@ Container.CloseButton = styled.div`
   right: 5px;
   padding: 5px;
   border-radius: 50%;
-  font-size: 10px;
-  background: ${props => props.error ? "white" : "#555"};
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-content: center;
-  color: ${props => props.error ? "black" : "white"};
+  color: white;
   cursor: pointer;
 `

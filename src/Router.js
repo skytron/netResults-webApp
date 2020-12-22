@@ -7,7 +7,7 @@ import {
 
 // Pages
 import Home from './pages/Home/Home';
-import DownloadPage from './pages/DownloadPage';
+import DownloadPage from './pages/Download/DownloadPage';
 
 // Components
 import Header from './components/Header/Header';

@@ -4,6 +4,8 @@ import App from './App';
 
 // Css rules to normalization
 import 'normalize.css/normalize.css';
+// Global css rules
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>

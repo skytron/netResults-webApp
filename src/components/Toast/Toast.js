@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+
 import { Container } from './ToastStyle';
 
 export default function Toast({ message, show, error }) {
@@ -15,7 +18,9 @@ export default function Toast({ message, show, error }) {
       {isShow &&
         <Container error={error}>
           <Container.Message>{message}</Container.Message>
-          <Container.CloseButton error={error} onClick={() => setShow(false)}><span>X</span></Container.CloseButton>
+          <Container.CloseButton error={error} onClick={() => setShow(false)}>
+            <FontAwesomeIcon icon={faTimesCircle} />
+          </Container.CloseButton>
         </Container>
       }
     </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { Container } from './HeaderStyles';
 
@@ -10,10 +10,10 @@ export default function Header() {
       <Container.Menu>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink exact to="/" activeStyle={{ color: 'orange' }}>Home</NavLink>
           </li>
           <li>
-            <Link to="/download">Download</Link>
+            <NavLink exact to="/download" activeStyle={{ color: 'orange' }}>Download</NavLink>
           </li>
         </ul>
       </Container.Menu>

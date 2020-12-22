@@ -3,8 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-grow: 1;
-  height: 100%;
-  background: whitesmoke;
+  height: 94vh;
 `
 
 Container.LeftColumn = styled.div`
