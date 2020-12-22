@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-grow: 1;
   height: 94vh;
+  margin-bottom: 2rem;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -24,6 +25,11 @@ Container.RightColumn = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 480px) {
+    margin-top: 400px;
+  }
+
 `
 
 Container.Title = styled.h3`
