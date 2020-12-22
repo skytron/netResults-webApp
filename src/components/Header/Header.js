@@ -8,7 +8,7 @@ import {
 export default function Header() {
   return (
     <Container>
-      <Title>Net Results Push Notification Panel | Home</Title>
+      <Title>Net Results Push Notification Panel</Title>
     </Container>
   )
 }
